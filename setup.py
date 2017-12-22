@@ -134,12 +134,12 @@ def _pre_install():
         
     
     if not os.path.exists(pkgfilename):
-        url = "http://download.mosek.com" + pkgpath
+        url = "https://download.mosek.com" + pkgpath
 
         try:
             # python 2
             import httplib
-            c = httplib.HTTPConnection('download.mosek.com')
+            c = httplib.HTTPSConnection('download.mosek.com')
             try:
                 c.request('GET',pkgpath)
                 r = c.getresponse()
